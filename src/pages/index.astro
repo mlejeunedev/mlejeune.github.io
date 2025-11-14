@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import homeData from '../data/home.json';
+import { base } from '../config';
 ---
 
 <Layout title="Maxime LE JEUNE - Développeur Web Symfony">
@@ -37,7 +38,7 @@ import homeData from '../data/home.json';
                 </p>
 
                 <div class="flex items-center justify-center gap-6 animate-fade-in-up" style="animation-delay: 0.4s;">
-                    <a href={homeData.hero.boutons.projets.lien} class="btn-premium">
+                    <a href={`${base}${homeData.hero.boutons.projets.lien}`} class="btn-premium">
                         {homeData.hero.boutons.projets.texte}
                     </a>
                     <a href={homeData.hero.boutons.contact.lien} class="text-[#2997ff] hover:text-white transition-all duration-300 text-lg font-medium flex items-center gap-2 group">
@@ -75,7 +76,7 @@ import homeData from '../data/home.json';
                     <!-- Photo (1 col x 2 rows) -->
                     <div class="lg:row-span-2 ultra-glass card-premium rounded-2xl overflow-hidden relative group">
                         <img
-                            src={homeData.photo.url}
+                            src={`${base}${homeData.photo.url}`}
                             alt={homeData.photo.alt}
                             loading="lazy"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -103,7 +104,7 @@ import homeData from '../data/home.json';
                                 <h3 class="text-lg font-semibold text-[#f5f5f7]">{homeData.projets.titre}</h3>
                                 <p class="text-xs text-[#a1a1a6] mt-1">{homeData.projets.description}</p>
                             </div>
-                            <a href={homeData.projets.bouton.lien} class="flex items-center gap-2 text-[#2997ff] hover:text-white transition-colors text-sm font-medium group">
+                            <a href={`${base}${homeData.projets.bouton.lien}`} class="flex items-center gap-2 text-[#2997ff] hover:text-white transition-colors text-sm font-medium group">
                                 <span>{homeData.projets.bouton.texte}</span>
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="transform transition-transform group-hover:translate-x-1">
                                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -114,7 +115,7 @@ import homeData from '../data/home.json';
 
                     <!-- CV (1 col x 1 row) -->
                     <div class="rounded-2xl p-6 card-premium cursor-pointer relative overflow-hidden group" style="background: linear-gradient(135deg, #2997ff 0%, #0077ed 100%);">
-                        <a href={homeData.cv.lien} download class="block h-full flex flex-col justify-between">
+                        <a href={`${base}${homeData.cv.lien}`} download class="block h-full flex flex-col justify-between">
                             <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
