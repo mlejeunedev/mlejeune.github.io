@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "titre": "WebEnhancer",
+    "description": "Outil d'audit de site web, analyse des données pour identifier les anomalies et anticiper les risques. Il génère des rapports PDF. Facile à intégrer, intuitif et sécurisé, il optimise la gouvernance et la performance.",
+    "technologies": ["Symfony", "PHP 8.2", "MariaDB", "n8n", "JavaScript", "Docker", "TailwindCSS"],
+    "icone": "LineChart",
+    "lienGithub": null,
+    "lienDemo": "https://webenhancer.fr/",
+    "actif": true
+  },
+  {
+    "id": 2,
+    "titre": "Lemon Punch",
+    "description": "Réalisation d'une refonte complète du site e-commerce du groupe Lemon Punch en utilisant le framework Astro pour une performance optimale et une expérience utilisateur améliorée.",
+    "technologies": ["Astro", "API", "Wordpress", "WooCommerce", "CSS", "Intégration Youtube API"],
+    "icone": "ShoppingCart",
+    "lienGithub": null,
+    "lienDemo": "https://lemonpunch.fr",
+    "actif": true
+  },
+  {
+    "id": 3,
+    "titre": "DoozyJo",
+    "description": "Site vitrine pour un lancement de produit, un bracelet intelligent qui capture et organise automatiquement toutes vos pensées en un simple clic, votre cerveau de poche toujours disponible.",
+    "technologies": ["ViteJS", "CSS", "Supabase"],
+    "icone": "Watch",
+    "lienGithub": null,
+    "lienDemo": "https://doozyjo.fr",
+    "actif": true
+  },
+  {
+    "id": 4,
+    "titre": "CarsFleet",
+    "description": "Cette application web sécurisée centralise la gestion de flotte (véhicules, clés, accidents), des utilisateurs (profils, droits, sites) et des abonnements (Stripe).",
+    "technologies": ["Symfony", "PHP 8", "MariaDB", "TailwindCSS", "Docker"],
+    "icone": "Car",
+    "lienGithub": null,
+    "lienDemo": null,
+    "actif": true
+  }
+]

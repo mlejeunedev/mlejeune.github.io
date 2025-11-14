@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import homeData from '../data/home.json';
+---
+
+<Layout title="Maxime LE JEUNE - Développeur Web Symfony">
+    <Header />
+
+    <!-- Premium Background -->
+    <div class="premium-bg"></div>
+
+    <main class="min-h-screen relative z-10">
+        <div class="max-w-[1280px] mx-auto px-8 lg:px-12">
+
+            <!-- Hero Section Ultra Premium -->
+            <section class="pt-32 pb-24 text-center">
+                {homeData.hero.disponible && (
+                    <div class="mb-8 animate-fade-in-up" style="animation-delay: 0s;">
+                        <div class="inline-flex items-center gap-2.5 px-5 py-2.5 badge-premium rounded-full">
+                            <span class="w-2 h-2 bg-[#30d158] rounded-full animate-pulse-glow shadow-[0_0_8px_rgba(48,209,88,0.6)]"></span>
+                            <span class="text-sm font-medium text-[#f5f5f7]">{homeData.hero.messageDisponibilite}</span>
+                        </div>
+                    </div>
+                )}
+
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-6 text-gradient-premium animate-fade-in-up" style="animation-delay: 0.1s;">
+                    {homeData.hero.nom}
+                </h1>
+
+                <p class="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#86868b] mb-3 tracking-tight animate-fade-in-up" style="animation-delay: 0.2s;">
+                    {homeData.hero.titre}
+                </p>
+
+                <p class="text-base sm:text-lg text-[#a1a1a6] mb-10 animate-fade-in-up" style="animation-delay: 0.3s;">
+                    Spécialisé <span class="text-[#2997ff]">{homeData.hero.specialisation}</span>
+                </p>
+
+                <div class="flex items-center justify-center gap-6 animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <a href={homeData.hero.boutons.projets.lien} class="btn-premium">
+                        {homeData.hero.boutons.projets.texte}
+                    </a>
+                    <a href={homeData.hero.boutons.contact.lien} class="text-[#2997ff] hover:text-white transition-all duration-300 text-lg font-medium flex items-center gap-2 group">
+                        <span>{homeData.hero.boutons.contact.texte}</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="transform transition-transform group-hover:translate-x-1">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Bento Grid - Masonry Asymétrique -->
+            <section class="pb-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[120px]">
+
+                    <!-- À propos (2 cols x 2 rows) -->
+                    <div class="lg:col-span-2 lg:row-span-2 ultra-glass card-premium rounded-2xl p-6">
+                        <div class="h-full flex flex-col justify-between">
+                            <div>
+                                <h2 class="text-xl font-semibold mb-3 text-[#f5f5f7]">
+                                    {homeData.apropos.titre}
+                                </h2>
+                                <p class="text-sm text-[#a1a1a6] leading-relaxed" set:html={homeData.apropos.description.replace(homeData.hero.specialisation, `<span class="text-[#2997ff]">${homeData.hero.specialisation}</span>`)}></p>
+                            </div>
+                            <div class="flex gap-2 mt-4">
+                                {homeData.apropos.badges.map(badge => (
+                                    <div class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10">
+                                        <span class="text-xs text-[#a1a1a6]">{badge.texte}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo (1 col x 2 rows) -->
+                    <div class="lg:row-span-2 ultra-glass card-premium rounded-2xl overflow-hidden relative group">
+                        <img
+                            src={homeData.photo.url}
+                            alt={homeData.photo.alt}
+                            loading="lazy"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+
+                    <!-- Stack (1 col x 3 rows) -->
+                    <div class="lg:row-span-3 ultra-glass card-premium rounded-2xl p-6">
+                        <div class="h-full flex flex-col">
+                            <h3 class="text-lg font-semibold mb-4 text-[#f5f5f7]">{homeData.stack.titre}</h3>
+                            <div class="flex flex-wrap gap-2 flex-1 content-start">
+                                {homeData.stack.technologies.map(tech => (
+                                    <div class="px-3 py-2 bg-white/5 rounded-lg border border-white/10 hover:border-[#2997ff]/50 hover:bg-white/10 transition-all cursor-default">
+                                        <span class="text-xs font-medium text-[#f5f5f7]">{tech}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projets (2 cols x 1 row) -->
+                    <div class="lg:col-span-2 ultra-glass card-premium rounded-2xl p-6">
+                        <div class="h-full flex items-center justify-between">
+                            <div>
+                                <h3 class="text-lg font-semibold text-[#f5f5f7]">{homeData.projets.titre}</h3>
+                                <p class="text-xs text-[#a1a1a6] mt-1">{homeData.projets.description}</p>
+                            </div>
+                            <a href={homeData.projets.bouton.lien} class="flex items-center gap-2 text-[#2997ff] hover:text-white transition-colors text-sm font-medium group">
+                                <span>{homeData.projets.bouton.texte}</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="transform transition-transform group-hover:translate-x-1">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CV (1 col x 1 row) -->
+                    <div class="rounded-2xl p-6 card-premium cursor-pointer relative overflow-hidden group" style="background: linear-gradient(135deg, #2997ff 0%, #0077ed 100%);">
+                        <a href={homeData.cv.lien} download class="block h-full flex flex-col justify-between">
+                            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-semibold text-white">{homeData.cv.titre}</h3>
+                                <span class="text-xs text-white/70">{homeData.cv.soustitre}</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Contact (1 col x 1 row) -->
+                    <div class="ultra-glass card-premium rounded-2xl p-6">
+                        <div class="h-full flex items-center justify-between">
+                            <h3 class="text-lg font-semibold text-[#f5f5f7]">{homeData.contact.titre}</h3>
+                            <div class="flex gap-2">
+                                {homeData.contact.liens.map(lien => (
+                                    <a href={lien.url} target={lien.type === 'email' ? '_self' : '_blank'} class="w-10 h-10 flex items-center justify-center bg-white/5 rounded-lg hover:bg-white/10 transition-colors border border-white/10" title={lien.label}>
+                                        {lien.icone === 'Mail' && (
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#2997ff]">
+                                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                            </svg>
+                                        )}
+                                        {lien.icone === 'Github' && (
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#2997ff]">
+                                                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                                                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                            </svg>
+                                        )}
+                                        {lien.icone === 'GitBranch' && (
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#2997ff]">
+                                                <line x1="6" y1="3" x2="6" y2="15"></line>
+                                                <circle cx="18" cy="6" r="3"></circle>
+                                                <circle cx="6" cy="18" r="3"></circle>
+                                                <path d="M18 9a9 9 0 0 1-9 9"></path>
+                                            </svg>
+                                        )}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Réseaux Sociaux (1 col x 1 row) -->
+                    <div class="ultra-glass card-premium rounded-2xl p-6">
+                        <div class="h-full flex items-center justify-between">
+                            <h3 class="text-lg font-semibold text-[#f5f5f7]">{homeData.reseaux.titre}</h3>
+                            <div class="flex gap-2">
+                                {homeData.reseaux.liens.map(lien => (
+                                    <a href={lien.url} target="_blank" class="w-10 h-10 flex items-center justify-center bg-white/5 rounded-lg hover:bg-white/10 transition-colors border border-white/10" title={lien.label}>
+                                        {lien.icone === 'Linkedin' && (
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#2997ff]">
+                                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                                <rect x="2" y="9" width="4" height="12"></rect>
+                                                <circle cx="4" cy="4" r="2"></circle>
+                                            </svg>
+                                        )}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Footer Premium -->
+            <footer class="pb-24 text-center">
+                <p class="text-sm text-[#86868b] font-medium">{homeData.footer.texte}</p>
+            </footer>
+
+        </div>
+    </main>
+</Layout>

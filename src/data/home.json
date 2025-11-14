@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "nom": "Maxime LE JEUNE",
+    "titre": "Concepteur Développeur d'Applications",
+    "specialisation": "PHP, Symfony",
+    "disponible": true,
+    "messageDisponibilite": "Disponible pour de nouveaux projets",
+    "boutons": {
+      "projets": {
+        "texte": "Découvrir mes projets",
+        "lien": "/projets"
+      },
+      "contact": {
+        "texte": "Me contacter",
+        "lien": "maximelj44@gmail.com"
+      }
+    }
+  },
+  "apropos": {
+    "titre": "À propos",
+    "description": "Développeur Full Stack avec 4 ans d'expérience, après avoir consolidé mes bases techniques durant 4 ans en alternances dans deux agence web Nantaise, j'ai co-fondé Spaarple et développé WebEnhancer, une solution SaaS d'audit web automatisé utilisée par des agences pour détecter rapidement les anomalies critiques et optimiser leurs processus.",
+    "badges": [
+      {
+        "texte": "5+ ans",
+        "label": "Expérience"
+      },
+      {
+        "texte": "France",
+        "label": "Localisation"
+      }
+    ]
+  },
+  "stack": {
+    "titre": "Skills Techniques",
+    "technologies": [
+      "Symfony",
+      "PHP",
+      "MySQL",
+      "Docker",
+      "Git",
+      "API Platform",
+      "JavaScript",
+      "PHPUnit",
+      "WordPress",
+      "n8n"
+    ]
+  },
+  "photo": {
+    "url": "/assets/img/my-face-maxime.png",
+    "alt": "Maxime LE JEUNE"
+  },
+  "projets": {
+    "titre": "Mes Projets",
+    "description": "Découvrez mes réalisations",
+    "bouton": {
+      "texte": "Voir",
+      "lien": "/projets"
+    }
+  },
+  "cv": {
+    "titre": "CV",
+    "soustitre": "PDF",
+    "icone": "FileText",
+    "lien": "/assets/img/LE-JEUNE-Maxime.pdf"
+  },
+  "contact": {
+    "titre": "Contact",
+    "liens": [
+      {
+        "type": "email",
+        "icone": "Mail",
+        "url": "mailto:maximelj44@gmail.com",
+        "label": "Email"
+      },
+      {
+        "type": "github",
+        "icone": "Github",
+        "url": "https://github.com/mlejeunedev",
+        "label": "GitHub"
+      },
+      {
+        "type": "gitlab",
+        "icone": "GitBranch",
+        "url": "https://gitlab.com/mlejeune",
+        "label": "GitLab"
+      }
+    ]
+  },
+  "reseaux": {
+    "titre": "Réseaux",
+    "liens": [
+      {
+        "type": "linkedin",
+        "icone": "Linkedin",
+        "url": "https://www.linkedin.com/in/mlejeune-a11443194/",
+        "label": "LinkedIn"
+      }
+    ]
+  },
+  "footer": {
+    "texte": "© 2025 Maxime LE JEUNE. Tous droits réservés."
+  }
+}
