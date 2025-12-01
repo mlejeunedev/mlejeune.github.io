@@ -8,189 +8,157 @@ import { base } from '../config';
 <Layout title="Maxime LE JEUNE - Développeur Web Symfony">
     <Header />
 
-    <!-- Premium Background -->
-    <div class="premium-bg"></div>
+    <!-- Audacious Background -->
+    <div class="audacious-bg"></div>
 
-    <main class="min-h-screen relative z-10">
-        <div class="max-w-[1280px] mx-auto px-8 lg:px-12">
+    <main class="min-h-screen relative z-10 overflow-hidden">
+        <div class="max-w-[1280px] mx-auto px-6 lg:px-12">
 
-            <!-- Hero Section Ultra Premium -->
-            <section class="pt-32 pb-24 text-center">
+            <!-- Hero Section -->
+            <section class="pt-40 pb-32 flex flex-col items-center text-center">
                 {homeData.hero.disponible && (
-                    <div class="mb-8 animate-fade-in-up" style="animation-delay: 0s;">
-                        <div class="inline-flex items-center gap-2.5 px-5 py-2.5 badge-premium rounded-full">
-                            <span class="w-2 h-2 bg-[#30d158] rounded-full animate-pulse-glow shadow-[0_0_8px_rgba(48,209,88,0.6)]"></span>
-                            <span class="text-sm font-medium text-[#f5f5f7]">{homeData.hero.messageDisponibilite}</span>
+                    <div class="mb-8 animate-fade-in">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+                            <span class="relative flex h-2.5 w-2.5">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                            </span>
+                            <span class="text-sm font-medium text-gray-300">{homeData.hero.messageDisponibilite}</span>
                         </div>
                     </div>
                 )}
 
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-none mb-6 text-gradient-premium animate-fade-in-up" style="animation-delay: 0.1s;">
-                    {homeData.hero.nom}
+                <h1 class="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] mb-8 animate-slide-up stagger-1">
+                    <span class="text-gradient-bold block">{homeData.hero.nom}</span>
                 </h1>
 
-                <p class="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#86868b] mb-3 tracking-tight animate-fade-in-up" style="animation-delay: 0.2s;">
+                <p class="text-2xl sm:text-3xl font-medium text-gray-400 mb-4 animate-slide-up stagger-2">
                     {homeData.hero.titre}
                 </p>
 
-                <p class="text-base sm:text-lg text-[#a1a1a6] mb-10 animate-fade-in-up" style="animation-delay: 0.3s;">
-                    Spécialisé <span class="text-[#2997ff]">{homeData.hero.specialisation}</span>
+                <p class="text-lg text-gray-500 mb-12 animate-slide-up stagger-3 max-w-2xl">
+                    Spécialisé <span class="text-gradient-accent font-semibold">{homeData.hero.specialisation}</span>
                 </p>
 
-                <div class="flex items-center justify-center gap-6 animate-fade-in-up" style="animation-delay: 0.4s;">
-                    <a href={`${base}${homeData.hero.boutons.projets.lien}`} class="btn-premium">
+                <div class="flex flex-col sm:flex-row items-center gap-6 animate-slide-up stagger-4">
+                    <a href={`${base}${homeData.hero.boutons.projets.lien}`} class="btn-primary">
                         {homeData.hero.boutons.projets.texte}
                     </a>
-                    <a href={homeData.hero.boutons.contact.lien} class="text-[#2997ff] hover:text-white transition-all duration-300 text-lg font-medium flex items-center gap-2 group">
-                        <span>{homeData.hero.boutons.contact.texte}</span>
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="transform transition-transform group-hover:translate-x-1">
-                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <a href={homeData.hero.boutons.contact.lien} class="btn-secondary">
+                        {homeData.hero.boutons.contact.texte}
                     </a>
                 </div>
             </section>
 
-            <!-- Bento Grid - Masonry Asymétrique -->
-            <section class="pb-24">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[120px]">
+            <!-- Bento Grid -->
+            <section class="pb-32">
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[180px]">
 
                     <!-- À propos (2 cols x 2 rows) -->
-                    <div class="lg:col-span-2 lg:row-span-2 ultra-glass card-premium rounded-2xl p-6">
-                        <div class="h-full flex flex-col justify-between">
-                            <div>
-                                <h2 class="text-xl font-semibold mb-3 text-[#f5f5f7]">
-                                    {homeData.apropos.titre}
-                                </h2>
-                                <p class="text-sm text-[#a1a1a6] leading-relaxed" set:html={homeData.apropos.description.replace(homeData.hero.specialisation, `<span class="text-[#2997ff]">${homeData.hero.specialisation}</span>`)}></p>
-                            </div>
-                            <div class="flex gap-2 mt-4">
-                                {homeData.apropos.badges.map(badge => (
-                                    <div class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10">
-                                        <span class="text-xs text-[#a1a1a6]">{badge.texte}</span>
-                                    </div>
-                                ))}
-                            </div>
+                    <div class="md:col-span-2 md:row-span-2 glass-panel rounded-3xl p-8 flex flex-col justify-between group">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">
+                                {homeData.apropos.titre}
+                            </h2>
+                            <p class="text-gray-400 leading-relaxed text-lg" set:html={homeData.apropos.description.replace(homeData.hero.specialisation, `<span class="text-blue-400 font-medium">${homeData.hero.specialisation}</span>`)}></p>
+                        </div>
+                        <div class="flex gap-3 mt-6">
+                            {homeData.apropos.badges.map(badge => (
+                                <div class="px-4 py-2 bg-white/5 rounded-full border border-white/10 text-sm text-gray-300">
+                                    {badge.texte}
+                                </div>
+                            ))}
                         </div>
                     </div>
 
                     <!-- Photo (1 col x 2 rows) -->
-                    <div class="lg:row-span-2 ultra-glass card-premium rounded-2xl overflow-hidden relative group">
+                    <div class="md:row-span-2 glass-panel rounded-3xl overflow-hidden relative group p-0">
                         <img
                             src={`${base}${homeData.photo.url}`}
                             alt={homeData.photo.alt}
                             loading="lazy"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
 
-                    <!-- Stack (1 col x 3 rows) -->
-                    <div class="lg:row-span-3 ultra-glass card-premium rounded-2xl p-6">
-                        <div class="h-full flex flex-col">
-                            <h3 class="text-lg font-semibold mb-4 text-[#f5f5f7]">{homeData.stack.titre}</h3>
-                            <div class="flex flex-wrap gap-2 flex-1 content-start">
-                                {homeData.stack.technologies.map(tech => (
-                                    <div class="px-3 py-2 bg-white/5 rounded-lg border border-white/10 hover:border-[#2997ff]/50 hover:bg-white/10 transition-all cursor-default">
-                                        <span class="text-xs font-medium text-[#f5f5f7]">{tech}</span>
-                                    </div>
-                                ))}
-                            </div>
+                    <!-- Stack (1 col x 2 rows) -->
+                    <div class="md:row-span-2 glass-panel rounded-3xl p-8">
+                        <h3 class="text-xl font-bold mb-6 text-white">{homeData.stack.titre}</h3>
+                        <div class="flex flex-wrap gap-2">
+                            {homeData.stack.technologies.map(tech => (
+                                <div class="px-3 py-1.5 bg-white/5 rounded-lg border border-white/10 text-xs font-medium text-gray-300 hover:bg-white/10 hover:border-blue-500/30 transition-colors cursor-default">
+                                    {tech}
+                                </div>
+                            ))}
                         </div>
                     </div>
 
                     <!-- Projets (2 cols x 1 row) -->
-                    <div class="lg:col-span-2 ultra-glass card-premium rounded-2xl p-6">
-                        <div class="h-full flex items-center justify-between">
-                            <div>
-                                <h3 class="text-lg font-semibold text-[#f5f5f7]">{homeData.projets.titre}</h3>
-                                <p class="text-xs text-[#a1a1a6] mt-1">{homeData.projets.description}</p>
-                            </div>
-                            <a href={`${base}${homeData.projets.bouton.lien}`} class="flex items-center gap-2 text-[#2997ff] hover:text-white transition-colors text-sm font-medium group">
-                                <span>{homeData.projets.bouton.texte}</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="transform transition-transform group-hover:translate-x-1">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
+                    <div class="md:col-span-2 glass-panel rounded-3xl p-8 flex items-center justify-between group cursor-pointer" onclick={`window.location.href='${base}${homeData.projets.bouton.lien}'`}>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">{homeData.projets.titre}</h3>
+                            <p class="text-gray-400">{homeData.projets.description}</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </div>
                     </div>
 
                     <!-- CV (1 col x 1 row) -->
-                    <div class="rounded-2xl p-6 card-premium cursor-pointer relative overflow-hidden group" style="background: linear-gradient(135deg, #2997ff 0%, #0077ed 100%);">
-                        <a href={`${base}${homeData.cv.lien}`} download class="block h-full flex flex-col justify-between">
-                            <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="text-base font-semibold text-white">{homeData.cv.titre}</h3>
-                                <span class="text-xs text-white/70">{homeData.cv.soustitre}</span>
-                            </div>
-                        </a>
-                    </div>
+                    <a href={`${base}${homeData.cv.lien}`} download class="glass-panel rounded-3xl p-8 flex flex-col justify-center items-center gap-4 group hover:bg-blue-600/20 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <span class="font-bold text-white">Télécharger CV</span>
+                    </a>
 
                     <!-- Contact (1 col x 1 row) -->
-                    <div class="ultra-glass card-premium rounded-2xl p-6">
-                        <div class="h-full flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-[#f5f5f7]">{homeData.contact.titre}</h3>
-                            <div class="flex gap-2">
-                                {homeData.contact.liens.map(lien => (
-                                    <a href={lien.url} target={lien.type === 'email' ? '_self' : '_blank'} class="w-10 h-10 flex items-center justify-center bg-white/5 rounded-lg hover:bg-white/10 transition-colors border border-white/10" title={lien.label}>
-                                        {lien.icone === 'Mail' && (
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#2997ff]">
-                                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                                            </svg>
-                                        )}
-                                        {lien.icone === 'Github' && (
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#2997ff]">
-                                                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                                                <path d="M9 18c-4.51 2-5-2-7-2"></path>
-                                            </svg>
-                                        )}
-                                        {lien.icone === 'GitBranch' && (
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#2997ff]">
-                                                <line x1="6" y1="3" x2="6" y2="15"></line>
-                                                <circle cx="18" cy="6" r="3"></circle>
-                                                <circle cx="6" cy="18" r="3"></circle>
-                                                <path d="M18 9a9 9 0 0 1-9 9"></path>
-                                            </svg>
-                                        )}
-                                    </a>
-                                ))}
-                            </div>
+                    <div class="glass-panel rounded-3xl p-8 flex flex-col justify-center items-center gap-4">
+                        <div class="flex gap-4">
+                            {homeData.contact.liens.map(lien => (
+                                <a href={lien.url} target={lien.type === 'email' ? '_self' : '_blank'} class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/20 hover:scale-110 transition-all text-gray-300 hover:text-white" title={lien.label}>
+                                    {lien.icone === 'Mail' && (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                        </svg>
+                                    )}
+                                    {lien.icone === 'Github' && (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                        </svg>
+                                    )}
+                                    {lien.icone === 'GitBranch' && (
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="6" y1="3" x2="6" y2="15"></line>
+                                            <circle cx="18" cy="6" r="3"></circle>
+                                            <circle cx="6" cy="18" r="3"></circle>
+                                            <path d="M18 9a9 9 0 0 1-9 9"></path>
+                                        </svg>
+                                    )}
+                                </a>
+                            ))}
                         </div>
-                    </div>
-
-                    <!-- Réseaux Sociaux (1 col x 1 row) -->
-                    <div class="ultra-glass card-premium rounded-2xl p-6">
-                        <div class="h-full flex items-center justify-between">
-                            <h3 class="text-lg font-semibold text-[#f5f5f7]">{homeData.reseaux.titre}</h3>
-                            <div class="flex gap-2">
-                                {homeData.reseaux.liens.map(lien => (
-                                    <a href={lien.url} target="_blank" class="w-10 h-10 flex items-center justify-center bg-white/5 rounded-lg hover:bg-white/10 transition-colors border border-white/10" title={lien.label}>
-                                        {lien.icone === 'Linkedin' && (
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#2997ff]">
-                                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                                <rect x="2" y="9" width="4" height="12"></rect>
-                                                <circle cx="4" cy="4" r="2"></circle>
-                                            </svg>
-                                        )}
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
+                        <span class="text-sm font-medium text-gray-400">Me contacter</span>
                     </div>
 
                 </div>
             </section>
 
-            <!-- Footer Premium -->
-            <footer class="pb-24 text-center">
-                <p class="text-sm text-[#86868b] font-medium">{homeData.footer.texte}</p>
+            <!-- Footer -->
+            <footer class="pb-12 text-center">
+                <p class="text-sm text-gray-600 font-medium">{homeData.footer.texte}</p>
             </footer>
 
         </div>
