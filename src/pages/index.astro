@@ -44,8 +44,11 @@ import { base } from '../config';
                     <a href={`${base}${homeData.hero.boutons.projets.lien}`} class="btn-primary">
                         {homeData.hero.boutons.projets.texte}
                     </a>
-                    <a href={homeData.hero.boutons.contact.lien} class="btn-secondary">
-                        {homeData.hero.boutons.contact.texte}
+                    <a href="mailto:maximelj44@gmail.com" class="text-[#2997ff] hover:text-white transition-all duration-300 text-lg font-medium flex items-center gap-2 group">
+                        <span>{homeData.hero.boutons.contact.texte}</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="transform transition-transform group-hover:translate-x-1">
+                            <path d="M7 3L14 10L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </a>
                 </div>
             </section>

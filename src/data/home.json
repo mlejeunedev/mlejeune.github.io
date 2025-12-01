@@ -27,6 +27,10 @@
       {
         "texte": "France",
         "label": "Localisation"
+      },
+      {
+        "texte": "Entrepreneur",
+        "label": "Expérience"
       }
     ]
   },
